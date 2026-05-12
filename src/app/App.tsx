@@ -1,4 +1,5 @@
 import { DiscordContextProvider } from '../hooks/useDiscordSdk'
+import { SyncContextProvider } from '@robojs/sync'
 import { Activity } from './Activity'
 import './App.css'
 
@@ -12,8 +13,18 @@ import './App.css'
  */
 export default function App() {
 	return (
-		<DiscordContextProvider>
-			<Activity />
+		<DiscordContextProvider authenticate scope={['identify', 'guilds']} loadingScreen={<LoadingScreen />}>
+			<SyncContextProvider loadingScreen={<LoadingScreen />}>
+				<Activity />
+			</SyncContextProvider>
 		</DiscordContextProvider>
+	)
+}
+
+function LoadingScreen() {
+	return (
+		<div className="flex h-dvh place-items-center justify-center bg-white text-5xl font-bold text-black dark:bg-black dark:text-white">
+			Loading...
+		</div>
 	)
 }
