@@ -1,4 +1,3 @@
-import { useSyncState } from '@robojs/sync'
 import { useDiscordSdk } from '../hooks/useDiscordSdk'
 import { User } from 'discord.js'
 
