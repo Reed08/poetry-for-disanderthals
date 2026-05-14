@@ -33,6 +33,7 @@
 		"vite": "^8.0.7"
 	},
 	"dependencies": {
+		"@colyseus/sdk": "^0.17.42",
 		"@discord/embedded-app-sdk": "^2.5.0",
 		"mode-watcher": "^1.1.0"
 	}
